@@ -1,7 +1,3 @@
-:root {
-    --color-primary: white;
-    --color-secondary: black;
-}
 body {
     font-family: monospace;
     margin: 10px;
@@ -10,24 +6,19 @@ body {
 
 section.card-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 4rem;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));
     transition: 1s;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 25rem), 1fr));
 }
 article.card {
     position: relative;
     height: 20rem;
-    max-width: 33rem;
     border-radius: 50px;
+    overflow: hidden;
+    transition: box-shadow 0.5s;
 }
-article.card {
-    position: relative;
-    height: 20rem;
-    max-width: 33rem;
-    border-radius: 50px;
-box-shadow: 5px 5px 10px rgb(0 0 0 / 50%);
-
+article.card:hover {
+    box-shadow: 5px 5px 10px rgb(0 0 0 / 50%);
 }
 
 article.card .back-part {
@@ -37,7 +28,7 @@ article.card .back-part {
     text-align: center;
 }
 article.card .back-part .contact {
-    color: var(--color-primary);
+    color: white;
     font-size: 35pt;  
     height: 6.5rem;
     display: flex;
@@ -45,6 +36,7 @@ article.card .back-part .contact {
     align-items: center;
 }
 article.card .back-part .contact i {
+    color: white;
     opacity: 0.5;
     cursor: pointer;
     transition: 0.5s;
@@ -55,52 +47,62 @@ article.card .back-part .contact i:hover {
 }
 article.card .back-part h3.title {
     color: rgb(255 255 255 / 90%);
-    font-size: 30pt;
+    font-size: 24pt;
     margin: 10px 0;
 }
-article.card .front-part::before {
+article.card .front-part {
+    min-height: calc(100% - 6.5rem);
+    position: absolute;
+    bottom: 0;
+    color: black;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+article.card .front-part .show::before {
     content: '';
     width: 3rem;
     height: 3rem;
     position: absolute;
     top: -3rem;
     right: 0;
-    background: radial-gradient(circle at top left, transparent 70%, var(--color-primary) 73%);
-}
-article.card .front-part {
-    position: absolute;
-    bottom: 0;
-    color: var(--color-secondary);
-    background-color: var(--color-primary);
-    border-radius: 50px 0 50px 50px;
-    width: 100%;
+    background: radial-gradient(circle at top left, transparent 70%, white 73%);
 }
 article.card .front-part .show {
+    position: relative;
+    background-color: white;
     display: grid;
     grid-template-columns: 4rem auto;
     grid-template-rows: 2rem auto;
     column-gap: 2rem;
     align-items: center;
-    padding: 1.5rem;
+    padding: 1rem;
+    border-radius: 50px 0 0 0;
 }
 article.card .front-part .show img {
     grid-row: 1/3;  
     width: 4rem;
     height: 4rem;
     border-radius: 50%;
-    border: 2px solid var(--color-primary);
+    border: 2px solid white;
 }
-article.card .front-part .show h4 {
+article.card .front-part .show a {
     margin: 0;
+    color: #551a8b;
     font-size: 14pt;
+    font-weight: bolder;
+    text-decoration: none;
 }
 article.card .front-part .hide {
+    background-color: white;
     max-height: 0;
     height: auto;
     overflow: hidden;
     padding: 0 2rem;
     transition: 0.5s ease-out;
 }
+
 article.card .front-part:hover .hide {
     max-height: 8rem;
     height: auto;
@@ -109,5 +111,5 @@ article.card .front-part .hide p {
     margin: 0;
     padding-bottom: 1.75rem;
     line-height: 1.5rem;
-    font-size: 12pt;
+    font-size: 10pt;
 }
