@@ -103,4 +103,8 @@ article.card .front-part .hide p {
     margin: 0;
     line-height: 1.5rem;
     font-size: 10pt;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
 }
