@@ -20,7 +20,6 @@ article.card {
 article.card:hover {
     box-shadow: 5px 5px 10px rgb(0 0 0 / 50%);
 }
-
 article.card .back-part {
     height: 100%;
     backdrop-filter: blur(2px);
@@ -51,15 +50,16 @@ article.card .back-part h3.title {
     margin: 10px 0;
 }
 article.card .front-part {
-    min-height: calc(100% - 6.5rem);
-    position: absolute;
-    bottom: 0;
-    color: black;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+    height: 100%;
+    margin-top: -6.5rem;
+    transition: 0.75s;
 }
+article.card .front-part:hover {
+    margin-top: -14rem;
+}
+
 article.card .front-part .show::before {
     content: '';
     width: 3rem;
@@ -95,21 +95,12 @@ article.card .front-part .show a {
     text-decoration: none;
 }
 article.card .front-part .hide {
+    position: relative;
     background-color: white;
-    max-height: 0;
-    height: auto;
-    overflow: hidden;
     padding: 0 2rem;
-    transition: 0.5s ease-out;
-}
-
-article.card .front-part:hover .hide {
-    max-height: 8rem;
-    height: auto;
 }
 article.card .front-part .hide p {
     margin: 0;
-    padding-bottom: 1.75rem;
     line-height: 1.5rem;
     font-size: 10pt;
 }
