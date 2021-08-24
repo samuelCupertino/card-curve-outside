@@ -30,8 +30,7 @@ const changeCssLigth = () => {
     for (let i = 0; i < show.length; i++) {
         show[i].style.backgroundColor = '#fff'
         show[i].style.color = '#000'
-        show[i].style.transition = '.9s'
-    
+        show[i].style.transition = '.9s'    
         hide[i].style.backgroundColor = '#fff'
         hide[i].style.color = '#000'
         hide[i].style.transition = '.9s'
