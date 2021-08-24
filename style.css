@@ -1,7 +1,8 @@
-body {
+body.body_ligth {
     font-family: monospace;
     margin: 10px;
     background-color: rgb(51 172 227 / 20%);
+    transition: .9s;
 }
 
 section.card-grid {
@@ -107,4 +108,45 @@ article.card .front-part .hide p {
     display: -webkit-box;
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
+}
+
+.dark_mode {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.change_button_dark {
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: black;
+    color: #fff;
+    cursor: pointer;
+}
+.change_button_ligth {
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #fff;
+    color: #000;
+    cursor: pointer;
+}
+
+.body_dark {
+    background-color: #2c2c2c;
+    transition: .9s;
+}
+
+.show_dark {
+    position: relative;
+    background-color: #121111eb;
+    display: grid;
+    grid-template-columns: 4rem auto;
+    grid-template-rows: 2rem auto;
+    column-gap: 2rem;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 50px 0 0 0;
+    color: #fff;
 }
