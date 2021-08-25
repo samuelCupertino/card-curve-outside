@@ -16,21 +16,24 @@ body {
 body.dark {
     background-color: rgb(42 42 42);
 }
+
 .btn-theme {
     text-align: right;
     margin-bottom: 20px;
 }
-.btn-theme i.icon {
-    display: none;
+.btn-theme i {
     font-size: 30pt;
     cursor: pointer;
+    display: none;
 }
-.btn-theme i.icon.current {
+body:not(.dark) .btn-theme i.fas {
+    color: #ffcf00;
     display: block;
 }
-.btn-theme i.icon.fas {
-    color: #ffcf00;
+body.dark .btn-theme i.far {
+    display: block;
 }
+
 
 section.card-grid {
     display: grid;
